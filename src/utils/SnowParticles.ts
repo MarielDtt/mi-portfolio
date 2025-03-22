@@ -9,7 +9,7 @@ export const SnowParticles = () => {
         sway: number;
     }
 
-    const NUMBER_OF_SNOWFLAKES = 300;
+    const NUMBER_OF_SNOWFLAKES = 1000;
     const MAX_SNOWFLAKE_SIZE = 5;
     const MAX_SNOWFLAKE_SPEED = 2;
 
@@ -36,7 +36,7 @@ export const SnowParticles = () => {
 
     const createSnowflake = (): Snowflake => ({
         x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        y: Math.random() * -100,
         radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
         color: getRandomPastelColor(),
         speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
@@ -57,14 +57,15 @@ export const SnowParticles = () => {
 
         // Si toca el suelo, invertir velocidad para que suba
         if (snowflake.y >= canvas.height - snowflake.radius) {
-            snowflake.speed *= -0.8; // Rebote más suave
             snowflake.y = canvas.height - snowflake.radius; // Evitar que traspase el suelo
+            
         }
 
         // Si la velocidad es muy baja, regenerar la bolita arriba
         if (Math.abs(snowflake.speed) < 0.5) {
             Object.assign(snowflake, createSnowflake());
             snowflake.y = 0; // Volver a la parte superior
+            snowflake.sway = 0;
         }
     };
 
@@ -93,5 +94,32 @@ export const SnowParticles = () => {
     window.addEventListener('scroll', () => {
         canvas.style.top = `${window.scrollY}px`;
     });
+
+    let intervalId: ReturnType<typeof setInterval> | null = null;
+
+
+    function stopSnowballs(): void {
+        if (intervalId !== null) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+
+    const startButton = document.getElementById("start");
+    const stopButton = document.getElementById("stop");
+
+    if (startButton && stopButton) {
+        startButton.addEventListener("click", spawnSnowballs);
+        stopButton.addEventListener("click", stopSnowballs);
+    } function spawnSnowballs(): void {
+        if (intervalId == null) {
+            intervalId = setInterval(() => {
+                for (let i = 0; i < 50; i++) {
+                    snowflakes.push(createSnowflake());
+                }
+            }, 3000);
+        }
+    }
+    spawnSnowballs()
 }
 
