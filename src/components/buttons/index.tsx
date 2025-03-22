@@ -2,10 +2,11 @@
 type ButtonProps = {
     text: string; // Texto que se mostrará en el botón
     className?: string; // Clases adicionales opcionales
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    id: string
 };
 
-export function ButtonRounded({ text, className, onClick }: ButtonProps) {
+export function ButtonRounded({ text, className, onClick, id }: ButtonProps) {
 
     return (
         <div className="flex items-center justify-center">
@@ -17,6 +18,7 @@ export function ButtonRounded({ text, className, onClick }: ButtonProps) {
                         onClick(event)
                     }
                 }}
+                id={id}
 
             >
                 {text}

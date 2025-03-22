@@ -14,7 +14,7 @@ export default function Page() {
                 <h1 className="animate-fade text-2xl font-bold">
                     Todo gran proyecto comienza con una pequeña idea... Explorá mi mundo de código y creatividad
                 </h1>
-                <ButtonRounded className="animate-fade-delay " text="Descubrilo..." />
+                <ButtonRounded className="animate-fade-delay"  text="Descubrilo..." id="magic-button"/>
             </div>
         </main>
       

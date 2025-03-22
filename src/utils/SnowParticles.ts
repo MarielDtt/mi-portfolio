@@ -9,12 +9,14 @@ export const SnowParticles = () => {
         sway: number;
     }
 
-    const NUMBER_OF_SNOWFLAKES = 1000;
+
+    const NUMBER_OF_SNOWFLAKES = 500;
     const MAX_SNOWFLAKE_SIZE = 5;
     const MAX_SNOWFLAKE_SPEED = 2;
 
 
     const snowflakes: Snowflake[] = [];
+
 
     const canvas: HTMLCanvasElement = document.createElement('canvas');
     canvas.style.position = 'absolute';
@@ -51,14 +53,14 @@ export const SnowParticles = () => {
         ctx.closePath();
     };
 
-    const updateSnowflake = (snowflake: Snowflake): void => {
+    const updateSnowflake = (snowflake: Snowflake, buttonRect: DOMRect | null): void => {
         snowflake.y += snowflake.speed;
         snowflake.x += snowflake.sway;
 
         // Si toca el suelo, invertir velocidad para que suba
         if (snowflake.y >= canvas.height - snowflake.radius) {
             snowflake.y = canvas.height - snowflake.radius; // Evitar que traspase el suelo
-            
+
         }
 
         // Si la velocidad es muy baja, regenerar la bolita arriba
@@ -67,13 +69,37 @@ export const SnowParticles = () => {
             snowflake.y = 0; // Volver a la parte superior
             snowflake.sway = 0;
         }
+
+        if (buttonRect) {
+            const bottomY = snowflake.y + snowflake.radius;
+            
+            const isColliding =
+              snowflake.x > buttonRect.left &&
+              snowflake.x < buttonRect.right &&
+              bottomY > buttonRect.top &&
+              snowflake.y < buttonRect.bottom;
+          
+            if (isColliding) {
+              snowflake.y = buttonRect.top - snowflake.radius;
+              snowflake.speed *= -0.5; // Rebote visual (sube un poquito)
+              return;
+            }
+          }
+          
     };
 
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        const buttonElement = document.getElementById("magic-button");
+        let buttonRect: DOMRect | null = null;
+
+        if (buttonElement) {
+            buttonRect = buttonElement.getBoundingClientRect();
+        }
+
         snowflakes.forEach(snowflake => {
-            updateSnowflake(snowflake);
+            updateSnowflake(snowflake, buttonRect);
             drawSnowflake(snowflake);
         });
 
