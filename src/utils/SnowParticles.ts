@@ -161,7 +161,7 @@ export const SnowParticles = () => {
                 for (let i = 0; i < 50; i++) {
                     snowflakes.push(createSnowflake());
                 }
-            }, 3000);
+            }, 4000);
         }
     }
     spawnSnowballs()
