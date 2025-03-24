@@ -23,7 +23,7 @@ function Navbar() {
                             <a href="#tecnologias" className="hover:text-white">Tecnologías</a>
                         </li>
                         <li>
-                            <a href="#sobremi" className="hover:text-white">Sobre mí</a>
+                            <a href="#sobremi" className="hover:text-white">Sosbre mí</a>
                         </li>
                         <li>
                             <a href="#contacto" className="hover:text-white">Contacto</a>
