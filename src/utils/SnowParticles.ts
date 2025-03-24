@@ -9,12 +9,10 @@ export const SnowParticles = () => {
         sway: number;
     }
 
-
-    const NUMBER_OF_SNOWFLAKES = 500;
+    const NUMBER_OF_SNOWFLAKES = 200;
     const MAX_SNOWFLAKE_SIZE = 5;
     const MAX_SNOWFLAKE_SPEED = 2;
-
-
+    
     const snowflakes: Snowflake[] = [];
 
 
@@ -27,6 +25,8 @@ export const SnowParticles = () => {
     document.body.appendChild(canvas);
 
     const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
+
+    
     if (!ctx) {
         throw new Error("No se pudo obtener el contexto de dibujo del canvas.");
     }
@@ -81,7 +81,7 @@ export const SnowParticles = () => {
           
             if (isColliding) {
               snowflake.y = buttonRect.top - snowflake.radius;
-              snowflake.speed *= -0.5; // Rebote visual (sube un poquito)
+              snowflake.y -= 0;
               return;
             }
           }
@@ -123,7 +123,25 @@ export const SnowParticles = () => {
 
     let intervalId: ReturnType<typeof setInterval> | null = null;
 
-
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            // Limpiar las bolitas acumuladas
+            snowflakes.length = 0;
+    
+            // Agregar nuevas bolitas lentamente
+            let count = 0;
+            const maxFlakes = 30;
+            const interval = setInterval(() => {
+                if (count >= maxFlakes) {
+                    clearInterval(interval);
+                    return;
+                }
+                snowflakes.push(createSnowflake());
+                count++;
+            }, 150);
+        }
+    });
+    
     function stopSnowballs(): void {
         if (intervalId !== null) {
             clearInterval(intervalId);
