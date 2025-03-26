@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Poppins } from 'next/font/google';
+import { Lilita_One, Poppins } from 'next/font/google';
 
 const poppins = Poppins({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
+  variable: '--font-poppins',
 });
 
+const lilita = Lilita_One({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-lilita',
+});
 
 
 export const metadata: Metadata = {
@@ -23,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${poppins.className} antialiased`}>
+      <body className={`${poppins.variable} ${lilita.variable} antialiased`}>
+
         {children}
       </body>
     </html>
