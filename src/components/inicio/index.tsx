@@ -1,7 +1,10 @@
 "use client"
 import { ButtonRounded } from "../buttons";
+import SkillsIcons from "../skillsIcons";
+
 
 function Inicio() {
+
 
     return (
         <div className="w-full h-96 flex flex-col pt-24 pl-8">
@@ -14,6 +17,9 @@ function Inicio() {
                     href="/Mariel Druetta - CV - Front End.pdf"
                     download text="Descargar CV"
                 />
+            </div>
+            <div className="flex justify-end">
+                <SkillsIcons></SkillsIcons>
             </div>
         </div>
     )
