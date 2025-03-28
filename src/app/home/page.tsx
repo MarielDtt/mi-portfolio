@@ -1,3 +1,4 @@
+import Contacto from "@/components/contacto";
 import Inicio from "@/components/inicio";
 import Proyectos from "@/components/proyectos";
 import SobreMi from "@/components/sobremi";
@@ -25,7 +26,7 @@ function Home() {
                <SobreMi/>
             </section>
             <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#ECE1F9] to-[#D7F4F7] to-90%gi w-full h-96 mt-4 mb-4 rounded-xl" id="contacto">
-                Contacto
+                <Contacto/>
             </section>
         </div>
 
