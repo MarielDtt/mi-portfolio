@@ -2,6 +2,7 @@ import Contacto from "@/components/contacto";
 import Inicio from "@/components/inicio";
 import Proyectos from "@/components/proyectos";
 import SobreMi from "@/components/sobremi";
+import Tecnologias from "@/components/tecnologias";
 
 
 function Home() {
@@ -19,7 +20,7 @@ function Home() {
             </section>
             <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#FFE3F3] to-[#D7F4F7] to-90%
              w-full h-96 mt-4 rounded-xl" id="tecnologias">
-                Tecnologías
+                <Tecnologias/>
             </section>
             <section className="bg-radial-[at_50%_75%] from-[#D7F4F7] via-[#E6F4FA] to-[#FDE8D7] to-90%
             w-full h-96 mt-4 rounded-xl" id="sobremi">
