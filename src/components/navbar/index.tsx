@@ -15,11 +15,11 @@ function Navbar() {
                     <Image src="/Logo.png" alt="logo" width={48} height={48} />
                 </a>
                 <ul className="gap-6 font-semibold hidden md:flex">
-                    <li><a href="#inicio" className="hover:text-white">Inicio</a></li>
-                    <li><a href="#proyectos" className="hover:text-white">Proyectos</a></li>
-                    <li><a href="#tecnologias" className="hover:text-white">Tecnologías</a></li>
-                    <li><a href="#sobremi" className="hover:text-white">Sobre mí</a></li>
-                    <li><a href="#contacto" className="hover:text-white">Contacto</a></li>
+                    <li><a href="#inicio"  className="transition-colors duration-300 hover:text-[#f7a35c]">Inicio</a></li>
+                    <li><a href="#proyectos"  className="transition-colors duration-300 hover:text-[#f7a35c]">Proyectos</a></li>
+                    <li><a href="#tecnologias"  className="transition-colors duration-300 hover:text-[#f7a35c]">Tecnologías</a></li>
+                    <li><a href="#sobremi"  className="transition-colors duration-300 hover:text-[#f7a35c]">Sobre mí</a></li>
+                    <li><a href="#contacto"  className="transition-colors duration-300 hover:text-[#f7a35c]">Contacto</a></li>
                 </ul>
                 <div className="block md:hidden items-center relative">
                     <MenuSandwich />
