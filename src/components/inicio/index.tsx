@@ -8,7 +8,9 @@ function Inicio() {
 
     return (
         <div className="w-full h-96 flex flex-col pt-24 pl-8">
-            <h1 className=" md:text-6xl text-4xl">MARIEL DRUETTA</h1>
+            <h1 className="font-lilita-custom md:text-6xl text-4xl">
+                MARIEL DRUETTA
+            </h1>
             <div className="pt-8 ">
                 <h2>Desarrollador FullStack</h2>
             </div>

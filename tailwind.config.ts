@@ -14,10 +14,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)"
       },
-      fontFamily: {
-        sans: ['var(--font-poppins)', 'sans-serif'],
-        lilita: ['var(--font-lilita)', 'cursive'],
-      },
     },
   },
   plugins: [],
