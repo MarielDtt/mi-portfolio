@@ -125,10 +125,10 @@ export const SnowParticles = () => {
 
     document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
-            // Limpiar las bolitas acumuladas
+            // Limpiar las pelotitas acumuladas
             snowflakes.length = 0;
     
-            // Agregar nuevas bolitas lentamente
+            // Agregar nuevas pelotitas lentamente
             let count = 0;
             const maxFlakes = 30;
             const interval = setInterval(() => {
