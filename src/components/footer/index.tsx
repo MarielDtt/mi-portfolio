@@ -10,9 +10,9 @@ function Footer() {
         <footer className="flex flex-wrap justify-between items-center bg-[#b5ead7] w-[90%] rounded-xl py-2 mt-2 text-center">
             <div className="flex flex-col font-semibold pl-4">
                 <h1 className="font-bold text-start">Secciones</h1>
-                <div className="w-32 rounded-full border-t border-[#f7a35c] pt-2" />
+                <div className="w-42 rounded-full border-t border-[#f7a35c] pt-2" />
 
-                <div className="flex text-xs text-start">
+                <div className="flex text-base text-start">
                     <div className="pr-4">
                         <p className="pb-2">
                             <a href="#inicio" className="transition-colors duration-300 hover:text-[#f7a35c]">Inicio</a>
@@ -47,7 +47,7 @@ function Footer() {
                 <h1 className="font-bold text-start">¡Toc, Toc! Estoy acá</h1>
                 <div className="w-42 rounded-full border-t border-[#f7a35c] pt-2" />
 
-                <div className="flex flex-col text-xs text-center items-center gap-8 mt-2">
+                <div className="flex flex-col text-center items-center gap-8 mt-2">
                     <div className=" flex gap-x-8">
                         <p className="hover:scale-150 transition-transform duration-300 ease-in-out" >
                             <a href="mailto:marieldruetta@gmail.com">
