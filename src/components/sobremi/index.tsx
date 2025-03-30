@@ -4,8 +4,17 @@ function SobreMi() {
 
     return (
         <>
-            <h1>¿Y quién lanza las pelotitas? Yo </h1>
-            <Image src="/perfil.jpg" alt="foto perfil" width={64} height={64} className="rounded-full" />
+            <h1 className="font-lilita-custom text-center pt-4 md:text-4xl text-2xl">¿Y quién lanza las pelotitas? Yo </h1>
+
+            <div className="pl-4 mt-4">
+                <Image src="/perfil.jpg"
+                    alt="foto perfil"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="w-40 h-40 md:w-64 md:h-64 rounded-full"
+                />
+            </div>
             <p>Soy Mariel, desarrolladora web con formación en Frontend y una pasión enorme por crear experiencias únicas.
                 Aprendí a lanzar pelotitas de código en distintos proyectos, y cada una fue tomando forma: diseño, funcionalidad, interacción.
                 Vengo de otro mundo profesional, pero encontré en la tecnología un espacio donde mi creatividad puede explotar (¡con glitter pastel, por supuesto!).
