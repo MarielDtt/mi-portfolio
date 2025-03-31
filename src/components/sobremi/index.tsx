@@ -13,6 +13,7 @@ const imagenes: string[] = [
 ]
 function SobreMi() {
     const [imagenEnPantalla, setImagenEnPantalla] = useState(0)
+    const [imagenGirando, setImagenGirando] = useState(false)
 
     useEffect(() => {
         if (imagenEnPantalla !== 0) {
@@ -23,11 +24,19 @@ function SobreMi() {
         }
     }, [imagenEnPantalla]);
 
-    const handleImagenClick = () => {
+    const handleChangeImagenClick = () => {
 
         setImagenEnPantalla((prev) =>
             prev === imagenes.length - 1 ? 0 : prev + 1
         );
+    }
+    const handleGiroImagenClick = () => {
+
+        setImagenGirando(true)
+        setTimeout(() => {
+            handleChangeImagenClick()
+            setImagenGirando(false);
+        }, 500);
     }
     return (
         <>
@@ -37,7 +46,11 @@ function SobreMi() {
                 className="flex pl-4 mt-4 flex-col md:flex-row cursor-pointer"
             >
 
-                <div className="relative group rounded-full w-4/5 h-64 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300" onClick={handleImagenClick}>
+                <div
+                    className={`relative group rounded-full w-4/5 h-64 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 ${imagenGirando ? "animate-flip" : ""
+                        }`}
+                    onClick={handleGiroImagenClick}>
+
                     <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
@@ -71,7 +84,7 @@ function SobreMi() {
                     </div>
 
                 </div>
-                <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative" onClick={handleImagenClick} onTouchStart={handleImagenClick}>
+                <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative" onClick={handleGiroImagenClick} onTouchStart={handleGiroImagenClick}>
                     <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
