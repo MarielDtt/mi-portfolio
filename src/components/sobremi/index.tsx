@@ -1,6 +1,7 @@
 "use client"
+
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const imagenes: string[] = [
@@ -12,6 +13,15 @@ const imagenes: string[] = [
 ]
 function SobreMi() {
     const [imagenEnPantalla, setImagenEnPantalla] = useState(0)
+
+    useEffect(() => {
+        if (imagenEnPantalla !== 0) {
+            const timeoutId = setTimeout(() => {
+                setImagenEnPantalla(0)
+            }, 3000);
+            return () => clearTimeout(timeoutId);
+        }
+    }, [imagenEnPantalla]);
 
     const handleImagenClick = () => {
 
@@ -62,7 +72,7 @@ function SobreMi() {
 
                 </div>
                 <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative" onClick={handleImagenClick} onTouchStart={handleImagenClick}>
-                <Image src={imagenes[imagenEnPantalla]}
+                    <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
                         height={0}
