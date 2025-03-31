@@ -25,9 +25,9 @@ function SobreMi() {
 
             <div
                 className="flex pl-4 mt-4 flex-col md:flex-row cursor-pointer"
-                onClick={handleImagenClick}>
+            >
 
-                <div className="relative group rounded-full w-4/5 h-64 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300" >
+                <div className="relative group rounded-full w-4/5 h-64 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300" onClick={handleImagenClick}>
                     <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
@@ -49,25 +49,26 @@ function SobreMi() {
                             alt="brillos decorativos"
                             width={92}
                             height={92}
-                            className="absolute bottom-2 left-2  w-18 h-18 animate-pulse pointer-events-none"
+                            className="absolute bottom-2 left-2  w-18 h-18 animate-pulse"
                         />
                         <Image
                             src="/brillo-tres.png"
                             alt="brillos decorativos"
                             width={92}
                             height={92}
-                            className="absolute top-20 right-0  w-16 h-16 animate-pulse pointer-events-none"
+                            className="absolute top-20 right-0  w-16 h-16 animate-pulse"
                         />
                     </div>
 
                 </div>
-                <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative">
-                    <Image src="/perfil.jpg"
+                <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative" onClick={handleImagenClick} onTouchStart={handleImagenClick}>
+                <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
                         height={0}
                         sizes="100vw"
                         className=" w-full h-full rounded-full z-0"
+
                     />
 
                     <Image
@@ -75,7 +76,7 @@ function SobreMi() {
                         alt="brillos decorativos"
                         width={92}
                         height={92}
-                        className="absolute top-0 left-0  w-12 h-12 animate-pulse pointer-events-none"
+                        className="absolute top-0 left-0  w-12 h-12 animate-pulse"
                     />
                 </div>
 
