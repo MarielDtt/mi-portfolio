@@ -84,7 +84,11 @@ function SobreMi() {
                     </div>
 
                 </div>
-                <div className="rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative" onClick={handleGiroImagenClick} onTouchStart={handleGiroImagenClick}>
+                <div
+                    className={`rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative ${imagenGirando ? "animate-flip" : ""
+                        }`}
+                    onClick={handleGiroImagenClick}
+                    onTouchStart={handleGiroImagenClick}>
                     <Image src={imagenes[imagenEnPantalla]}
                         alt="foto perfil"
                         width={0}
