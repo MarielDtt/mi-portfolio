@@ -51,12 +51,12 @@ function Footer() {
                     <div className=" flex gap-x-8">
                         <p className="hover:scale-150 transition-transform duration-300 ease-in-out" >
                             <a href="mailto:marieldruetta@gmail.com">
-                                <Mail color="#ff99cc" strokeWidth={1.5} absoluteStrokeWidth />
+                                <Mail color="#000000" strokeWidth={1.5} absoluteStrokeWidth />
                             </a>
                         </p>
                         <p className="hover:scale-150 transition-transform duration-300 ease-in-out" >
                             <a href="https://api.whatsapp.com/send?phone=5491166603916" target="_blank" rel="noopener noreferrer">
-                                <WhatsAppIcon className="text-[#25D366]" />
+                                <WhatsAppIcon className="text-black" />
                             </a>
                         </p>
                     </div>
@@ -68,7 +68,7 @@ function Footer() {
                         </p>
                         <p className="hover:scale-150 transition-transform duration-300 ease-in-out">
                             <a href="https://www.linkedin.com/in/mariel-druetta-dev/" target="_blank" rel="noopener noreferrer">
-                                <Linkedin color="#0077b5" strokeWidth={1.5} absoluteStrokeWidth />
+                                <Linkedin color="#000000" strokeWidth={1.5} absoluteStrokeWidth />
                             </a>
                         </p>
                     </div>
