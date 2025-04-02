@@ -34,18 +34,18 @@ export function MenuSandwich() {
             handler={setOpen}
         >
             <MenuHandler>
-                <div className="cursor-pointer">
+                <div className="cursor-pointer text-[#f7a35c]">
                     <SquareMenu />
                 </div>
             </MenuHandler>
             <MenuList
-                className="w-48 p-2 rounded-xl bg-white/20 backdrop-blur-md shadow-lg z-50 border border-black"
+                className="w-48 p-2 rounded-xl bg-white/20 backdrop-blur-md shadow-lg z-50 border border-[#f7a35c]"
                 placeholder=""
                 onPointerEnterCapture={() => { }}
                 onPointerLeaveCapture={() => { }}
             >
                 <MenuItem
-                    className="border-b border-black last:border-none hover:bg-white/30 transition-colors duration-200 rounded-md"
+                    className="border-b border-[#f7a35c] last:border-none rounded-md"
                     placeholder=""
                     onPointerEnterCapture={() => { }}
                     onPointerLeaveCapture={() => { }}
@@ -53,7 +53,7 @@ export function MenuSandwich() {
                     <a href="#inicio"> Inicio </a>
                 </MenuItem>
                 <MenuItem
-                    className="border-b border-black last:border-none hover:bg-white/30 transition-colors duration-200 rounded-md"
+                    className="border-b border-[#f7a35c] last:border-none rounded-md"
                     placeholder=""
                     onPointerEnterCapture={() => { }}
                     onPointerLeaveCapture={() => { }}
@@ -61,21 +61,21 @@ export function MenuSandwich() {
                     <a href="#proyectos">Proyectos</a>
                 </MenuItem>
                 <MenuItem
-                    className="border-b border-black last:border-none hover:bg-white/30 transition-colors duration-200 rounded-md"
+                    className="border-b border-[#f7a35c] last:border-none rounded-md"
                     placeholder=""
                     onPointerEnterCapture={() => { }}
                     onPointerLeaveCapture={() => { }}
                 >
                     <a href="#tecnologias"> Tecnologías </a>
                 </MenuItem>
-                <MenuItem className="border-b border-black last:border-none hover:bg-white/30 transition-colors duration-200 rounded-md"
+                <MenuItem className="border-b border-[#f7a35c] last:border-none rounded-md"
                     placeholder=""
                     onPointerEnterCapture={() => { }}
                     onPointerLeaveCapture={() => { }}
                 >
                     <a href="#sobremi"> Sobre mí </a>
                 </MenuItem>
-                <MenuItem className="border-b border-black last:border-none hover:bg-white/30 transition-colors duration-200 rounded-md"
+                <MenuItem className="border-b border-[#f7a35c] last:border-none rounded-md"
                     placeholder=""
                     onPointerEnterCapture={() => { }}
                     onPointerLeaveCapture={() => { }}

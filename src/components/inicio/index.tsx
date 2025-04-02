@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { ButtonRounded } from "../buttons";
-import SkillsIcons from "../skillsIcons";
+
 
 const textoAnimado = ["Desarrollador FullStack", "Desarrollador Frontend", "Desarrollador Web"]
 function Inicio() {
@@ -43,32 +43,44 @@ function Inicio() {
     }, [characterByCharacter, borrando, posicionFraseActual]);
 
     return (
-        <div className="w-full h-96 flex flex-col pt-24 pl-8">
-            <h1 className="font-lilita-custom md:text-6xl text-4xl">
-                MARIEL DRUETTA
-            </h1>
-            <div className="pt-8 ">
-                <h2
-                    key={characterByCharacter}
-                    className="text-rose-500 text-2xl text-center w-2/5 special-elite-text"
-                >
-                    {characterByCharacter}
-                    <span className="ml-1 animate-pulse">|</span>
-                </h2>
+        <>
+            <div className="w-full h-96 flex flex-col pt-24 pl-8  hidden md:flex">
+                <h1 className="font-lilita-custom md:text-6xl text-4xl">
+                    MARIEL DRUETTA
+                </h1>
+                <div className="pt-8 ">
+                    <h2
+                        key={characterByCharacter}
+                        className="text-[#f7a35c] text-2xl text-center w-2/5 special-elite-text"
+                    >
+                        {characterByCharacter}
+                        <span className="ml-1 animate-pulse">|</span>
+                    </h2>
 
+                </div>
+                <div className="w-2/5 pt-8 flex justify-center">
+                    <ButtonRounded
+                        href="/Mariel Druetta - CV - Front End.pdf"
+                        download text="Descargar CV"
+                    />
+                </div>
+              
             </div>
-            <div className="w-2/5 pt-8 flex justify-center">
-                <ButtonRounded
-                    href="/Mariel Druetta - CV - Front End.pdf"
-                    download text="Descargar CV"
-                />
+            <div className="w-full h-96 flex flex-col items-center justify-center  px-4 text-center md:hidden">
+                <h1 className="font-lilita-custom text-4xl">MARIEL DRUETTA</h1>
+
+                <div className="pt-6">
+                    <h2 className="text-rose-500 text-base special-elite-text">
+                        {characterByCharacter}<span className="ml-1 animate-pulse">|</span>
+                    </h2>
+                </div>
+
+                <div className="pt-6">
+                    <ButtonRounded href="/Mariel Druetta - CV - Front End.pdf" download text="Descargar CV" />
+                </div>
             </div>
-            <div className="flex justify-end">
-                <SkillsIcons></SkillsIcons>
-            </div>
-        </div>
+        </>
     )
-
 }
 
 export default Inicio;
