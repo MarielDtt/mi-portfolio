@@ -47,7 +47,7 @@ function Tecnologias() {
       <h1 className="font-lilita-custom text-center pt-4 md:text-4xl text-2xl">
         Tecnologías que hacen la magia
       </h1>
-      <p className="font-poppins-custom mx-8 mt-2 text-base md:text-lg leading-relaxed text-justify">
+      <p className="font-poppins-custom mx-8 mt-4 text-base md:text-lg leading-relaxed text-justify">
         Ya aprendí a manejar este panel de tecnologías sin provocar un desastre nuclear ☢️
       </p>
       <p className="font-poppins-custom mx-8 mt-2 text-base md:text-lg leading-relaxed text-justify">

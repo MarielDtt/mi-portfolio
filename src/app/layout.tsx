@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { Lilita_One, Poppins } from 'next/font/google';
+import { Lilita_One, Poppins, Special_Elite } from 'next/font/google';
 
 const poppins = Poppins({
   weight: ['300', '400', '700'],
@@ -15,6 +15,11 @@ const lilita = Lilita_One({
   variable: '--font-lilita',
 });
 
+const special = Special_Elite({
+  weight: '400', // El peso es 400 según tu CSS
+  subsets: ['latin'],
+  variable: '--font-special-elite', // Asigna una variable CSS
+});
 
 export const metadata: Metadata = {
   title: "MarielDtt",
@@ -29,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${poppins.variable} ${lilita.variable} antialiased`}>
+      <body className={`${poppins.variable} ${lilita.variable} ${special.variable} antialiased`}>
 
         {children}
       </body>

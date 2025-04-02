@@ -15,6 +15,10 @@
   font-family: var(--font-poppins);
 }
 
+.special-elite-text {
+  font-family: var(--font-special-elite);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
       --background: #fdf6e3; /* Color manteca */
