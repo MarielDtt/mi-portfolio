@@ -8,19 +8,39 @@ function Inicio() {
 
     const [posicionFraseActual, setPosicionFraseActual] = useState(0);
     const [characterByCharacter, setCharacterByCharacter] = useState("")
+    const [borrando, setBorrando] = useState(false);
+
 
     useEffect(() => {
-     const timeoutId= setTimeout(() => {
+        const frase = textoAnimado[posicionFraseActual];
 
-            if (posicionFraseActual < textoAnimado.length - 1) {
-                setPosicionFraseActual(posicionFraseActual + 1);
+        let timeoutId: ReturnType<typeof setTimeout>;
+
+        if (!borrando) {
+            if (characterByCharacter.length < frase.length) {
+                timeoutId = setTimeout(() => {
+                    setCharacterByCharacter(frase.slice(0, characterByCharacter.length + 1));
+                }, 100);
             } else {
-                setPosicionFraseActual(0);
+                timeoutId = setTimeout(() => {
+                    setBorrando(true);
+                }, 1000); // Espera antes de empezar a borrar
             }
-        }, 1000); 
-        return () => clearTimeout(timeoutId)
-    }, [posicionFraseActual]);
+        } else {
+            if (characterByCharacter.length > 0) {
+                timeoutId = setTimeout(() => {
+                    setCharacterByCharacter(frase.slice(0, characterByCharacter.length - 1));
+                }, 50); // Velocidad de borrado (puede ser más rápida)
+            } else {
+                setBorrando(false);
+                setPosicionFraseActual((prev) =>
+                    prev < textoAnimado.length - 1 ? prev + 1 : 0
+                );
+            }
+        }
 
+        return () => clearTimeout(timeoutId);
+    }, [characterByCharacter, borrando, posicionFraseActual]);
 
     return (
         <div className="w-full h-96 flex flex-col pt-24 pl-8">
@@ -28,8 +48,12 @@ function Inicio() {
                 MARIEL DRUETTA
             </h1>
             <div className="pt-8 ">
-                <h2 key={posicionFraseActual} className="text-rose-500 text-2xl text-center w-2/5 special-elite-text">{textoAnimado[posicionFraseActual]}
-                <span className="ml-1 animate-pulse">|</span>
+                <h2
+                    key={characterByCharacter}
+                    className="text-rose-500 text-2xl text-center w-2/5 special-elite-text"
+                >
+                    {characterByCharacter}
+                    <span className="ml-1 animate-pulse">|</span>
                 </h2>
 
             </div>
