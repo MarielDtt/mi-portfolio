@@ -28,7 +28,10 @@ function Inicio() {
                 MARIEL DRUETTA
             </h1>
             <div className="pt-8 ">
-                <h2 key={posicionFraseActual} className="text-rose-500 text-2xl text-center w-2/5 special-elite-text">{textoAnimado[posicionFraseActual]}</h2>
+                <h2 key={posicionFraseActual} className="text-rose-500 text-2xl text-center w-2/5 special-elite-text">{textoAnimado[posicionFraseActual]}
+                <span className="ml-1 animate-pulse">|</span>
+                </h2>
+
             </div>
             <div className="w-2/5 pt-8 flex justify-center">
                 <ButtonRounded
