@@ -16,6 +16,8 @@ const imagenes: ImagenTecnologia[] = [
   { id: 6, img: "/postgreSQL.png" },
   { id: 7, img: "/tailwind.png" },
   { id: 8, img: "/ts.png" },
+  { id: 9, img: "/vite.png"},
+  { id: 10, img: "/css.png"}
 ];
 
 function Tecnologias() {

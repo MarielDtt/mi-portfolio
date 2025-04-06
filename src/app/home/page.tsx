@@ -14,7 +14,7 @@ function Home() {
                 <Inicio/>
             </section>
             <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#F8E0D7] to-[#D7F4F7] to-90%
-             w-full h-96 mt-4 rounded-xl mb-16" id="proyectos">
+             w-full h-164 mt-4 rounded-xl mb-16" id="proyectos">
                 <Proyectos/>
             </section>
             <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#FFE3F3] to-[#D7F4F7] to-90%

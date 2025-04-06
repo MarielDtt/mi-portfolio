@@ -117,7 +117,7 @@ function SobreMi() {
                     </p>
 
                     <p className="font-poppins-custom mx-8 mt-4 text-base md:text-lg leading-relaxed text-justify">
-                        Me encantan los gatos, tengo dos: Galileo Galilei y Davinci, y soy muy fan de Los Simpsons.
+                        Me encantan los gatos, tengo dos: Galileo Galilei y Da Vinci, y soy muy fan de Los Simpsons.
                         Me entusiasma resolver problemas, trabajar en equipo y seguir aprendiendo.
                     </p>
                     <p className="font-poppins-custom mx-8 mt-4 text-base md:text-lg leading-relaxed text-justify">
