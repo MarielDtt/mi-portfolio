@@ -8,11 +8,7 @@ function Proyectos() {
             <h3 className="font-poppins-custom mx-8 my-4 text-base md:text-lg leading-relaxed text-justify">Una evolución construida a base de pequeñas ideas y mucho código.</h3>
            
             <UnderlineTabs />
-{/* 
-            <div>MobileCer</div>
-            <div>ByteBox</div>
-            <div>PetApp</div>
-            <div>FilsFriends</div> */}
+
         </>
     )
 

@@ -2,6 +2,7 @@ import { Globe, Linkedin, Mail, MapPin, PhoneCall } from "lucide-react";
 import WhatsAppIcon from "../icons/whatsApp";
 import GitHubIcon from "../icons/gitHub";
 
+
 function Contacto() {
 
     return (
@@ -55,6 +56,7 @@ function Contacto() {
                     ></iframe>
                 </div>
             </div>
+          
         </>
     )
 }
