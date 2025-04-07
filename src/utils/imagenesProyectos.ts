@@ -11,4 +11,10 @@ export const imagenesProyectos = {
       "/byteBox_3.jpg",
       "/byteBox_4.jpg",
     ],
+    mobileCer: [
+      "/mobileCer_1.jpg",
+      "/mobileCer_2.jpg",
+      "/mobileCer_2.jpg", //Cambiar
+      "/mobileCer_1.jpg", //Cambiar
+    ],
 }

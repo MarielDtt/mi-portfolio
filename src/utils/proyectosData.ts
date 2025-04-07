@@ -19,7 +19,6 @@ export const proyectosData = [
         imagenes: imagenesProyectos.byteBox,
         tecnologias: [
             { src: "/next.png", alt: "next", tooltip: "Next" },
-            { src: "/react.png", alt: "React", tooltip: "React" },
             { src: "/ts.png", alt: "TypeScript", tooltip: "TypeScript" },
             { src: "/tailwind.png", alt: "tailwind", tooltip: "Tailwind" },
             { src: "/material.png", alt: "material", tooltip: "MaterialTailwind" },
@@ -27,5 +26,19 @@ export const proyectosData = [
             { src: "/sonner.png", alt: "sonner", tooltip: "Sonner" },
         ]
     },
+    {
+        titulo: "MobileCer",
+        descripcion: "Aplicación web para gestión de arreglos de celulares. Mobile CER permite a técnicos visualizar órdenes, actualizar estados y ver detalles de cada reparación. Me enfoqué en el desarrollo del dashboard responsive, carga de imágenes y experiencia de usuario. Aprendí a trabajar en equipo, adaptándome a diseños existentes y aportando ideas para mejorar la interfaz.",
+        imagenes: imagenesProyectos.mobileCer,
+        tecnologias: [
+            { src: "/next.png", alt: "next", tooltip: "Next" },
+            { src: "/ts.png", alt: "TypeScript", tooltip: "TypeScript" },
+            { src: "/tailwind.png", alt: "tailwind", tooltip: "Tailwind" },
+            { src: "/lucide.png", alt: "lucide", tooltip: "Lucide" },
+            { src: "/sonner.png", alt: "sonner", tooltip: "Sonner" },
+            { src: "/zustand.png", alt: "zustand", tooltip: "Zustand" },
+        ]
+    },
+
 
 ]

@@ -36,7 +36,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes }: CardProps) 
 
     return (
         <Card
-            className="w-1/2 max-w-[26rem] bg-transparent shadow-[0_0_25px_rgba(255,182,193,0.8)]"
+            className="w-full sm:w-1/2 lg:w-1/3 max-w-[22rem] bg-transparent shadow-[0_0_25px_rgba(255,182,193,0.8)]"
             placeholder
             onPointerEnterCapture
             onPointerLeaveCapture
