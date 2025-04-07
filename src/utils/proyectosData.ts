@@ -11,7 +11,8 @@ export const proyectosData = [
             { src: "/typeOrm.png", alt: "TypeOrm", tooltip: "TypeOrm" },
             { src: "/react.png", alt: "React", tooltip: "React" },
             { src: "/vite.png", alt: "Vite", tooltip: "Vite" },
-        ]
+        ],
+        deploy:""        
     },
     {
         titulo: "ByteBox",
@@ -24,7 +25,8 @@ export const proyectosData = [
             { src: "/material.png", alt: "material", tooltip: "MaterialTailwind" },
             { src: "/lucide.png", alt: "lucide", tooltip: "Lucide" },
             { src: "/sonner.png", alt: "sonner", tooltip: "Sonner" },
-        ]
+        ],
+        deploy:""
     },
     {
         titulo: "MobileCer",
@@ -37,7 +39,9 @@ export const proyectosData = [
             { src: "/lucide.png", alt: "lucide", tooltip: "Lucide" },
             { src: "/sonner.png", alt: "sonner", tooltip: "Sonner" },
             { src: "/zustand.png", alt: "zustand", tooltip: "Zustand" },
-        ]
+        ],
+        deploy: "https://pffront-fawn.vercel.app/"
+
     },
 
 

@@ -10,6 +10,7 @@ import {
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import Carrusel from "./carrusel"
+import { ButtonRounded } from "../buttons";
 
 type CardProps = {
     titulo: string;
@@ -20,9 +21,10 @@ type CardProps = {
         tooltip: string;
     }[];
     imagenes: string[];
+    deploy?: string;
 };
 
-function CardProyect({ titulo, descripcion, tecnologias, imagenes }: CardProps) {
+function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: CardProps) {
     const [estaEnElFinal, setEstaEnElFinal] = useState(false);
 
     const handleScrollDescripcion = (event: React.UIEvent<HTMLDivElement>) => {
@@ -82,6 +84,11 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes }: CardProps) 
                     >
                         {descripcion}
                     </Typography>
+                    {deploy ? (
+                    <div className="mt-2">
+                        <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base" />
+                    </div>
+                ) : null}
                 </div>
 
                 <div className="w-3/4 mx-auto h-6 bg-gradient-to-t from-[rgba(255,182,193,0.8)] to-transparent pointer-events-none mt-[-1rem]"></div>
@@ -97,6 +104,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes }: CardProps) 
                         className="mx-auto mt-[-1rem] text-black opacity-75 animate-bounce pointer-events-none"
                     />
                 )}
+                   
 
                 <div className="group mt-8 inline-flex flex-wrap items-center justify-center w-full gap-3">
                     {tecnologias.map((tech, index) => (
@@ -107,7 +115,10 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes }: CardProps) 
                         </Tooltip>
                     ))}
                 </div>
+
+             
             </CardBody>
+
         </Card>
     );
 }

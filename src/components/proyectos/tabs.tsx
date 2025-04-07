@@ -53,6 +53,7 @@ export function UnderlineTabs() {
                             descripcion={proyecto.descripcion}
                             imagenes={proyecto.imagenes}
                             tecnologias={proyecto.tecnologias}
+                            deploy={proyecto.deploy}
                         />
                     ))}
                 </div>
