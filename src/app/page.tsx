@@ -1,8 +1,9 @@
 "use client"
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { SnowParticles } from "../utils/SnowParticles"
 import { ButtonRounded } from "@/components/buttons";
 import { useRouter } from "next/navigation";
+
 
 
 
@@ -13,12 +14,7 @@ export default function Page() {
     }, []); // Se ejecuta solo una vez al montar la página
 
     const handleClick = () => {
-
-        setTimeout(() => {
-            router.push("/home");
-        }, 1500);
-        
-        
+        router.push("/home");      
       };
 
     return (
