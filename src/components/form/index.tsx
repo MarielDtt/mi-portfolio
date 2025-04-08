@@ -26,9 +26,9 @@ function Form() {
                         </select>
                     </label>
                 </div>
-                <div className="flex mt-4 w-1/2 text-base">
-                    <label className="font-poppins-custom text-base"> Mensaje
-                        <textarea  rows={3} className="bg-gradient-to-r from-[#d1f7ff] to-[#ffe3f3] border-2 border-[#f7a35c] rounded-md w-full text-base leading-normal pl-2"></textarea>
+                <div className="flex flex-col mt-4 w-1/2 text-base">
+                    <label className="flex flex-col font-poppins-custom text-base"> Mensaje
+                        <textarea  rows={3} className="bg-gradient-to-r from-[#d1f7ff] to-[#ffe3f3] border-2 border-[#f7a35c] rounded-md w-1/2 text-base leading-normal pl-2"></textarea>
                     </label>
                 </div>
                 <ButtonRounded text="Enviar" className="mt-4" />
