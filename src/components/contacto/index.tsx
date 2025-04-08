@@ -1,6 +1,7 @@
 import { Globe, Linkedin, Mail, MapPin, PhoneCall } from "lucide-react";
 import WhatsAppIcon from "../icons/whatsApp";
 import GitHubIcon from "../icons/gitHub";
+import Form from "../form";
 
 
 function Contacto() {
@@ -55,8 +56,13 @@ function Contacto() {
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
+
             </div>
-          
+            
+            <div>
+                <Form />
+            </div>
+
         </>
     )
 }

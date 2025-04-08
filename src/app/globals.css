@@ -77,3 +77,12 @@ body {
   -ms-overflow-style: none; /* IE y Edge */
   scrollbar-width: none; /* Firefox */
 }
+select:focus {
+  outline: none; /* saca el borde azul predeterminado */
+  box-shadow: 0 0 0 2px #f7a35c; /* tu color personalizado */
+}
+select option:checked, select option:hover {
+  background-color: #f7a35c !important;
+  color: white !important;
+}
+
