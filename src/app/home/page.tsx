@@ -25,7 +25,7 @@ function Home() {
             w-full md:h-96 h-auto mt-4 rounded-xl mb-16" id="sobremi">
                <SobreMi/>
             </section>
-            <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#ECE1F9] to-[#D7F4F7] to-90%gi w-full h-200 mt-4 rounded-xl mb-16" id="contacto">
+            <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#ECE1F9] to-[#D7F4F7] to-90%gi w-full h-180 mt-4 rounded-xl mb-16" id="contacto">
                 <Contacto/>
             </section>
         </div>

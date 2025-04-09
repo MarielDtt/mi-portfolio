@@ -88,6 +88,8 @@ export const SnowParticles = () => {
           
     };
 
+    let animationId: number;
+
     const animate = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -102,8 +104,7 @@ export const SnowParticles = () => {
             updateSnowflake(snowflake, buttonRect);
             drawSnowflake(snowflake);
         });
-
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
     };
 
     for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
@@ -165,5 +166,9 @@ export const SnowParticles = () => {
         }
     }
     spawnSnowballs()
+    return () => {
+        cancelAnimationFrame(animationId); // 👈 Detiene la animación
+        document.body.removeChild(canvas); // 👈 Elimina el canvas del DOM
+    };
 }
 

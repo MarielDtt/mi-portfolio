@@ -10,8 +10,11 @@ import { useRouter } from "next/navigation";
 export default function Page() {
     const router = useRouter();
     useEffect(() => {
-        SnowParticles();
-    }, []); // Se ejecuta solo una vez al montar la página
+        const cleanup = SnowParticles(); 
+        return () => {
+            cleanup();
+        };
+    }, []);
 
     const handleClick = () => {
         router.push("/home");      
