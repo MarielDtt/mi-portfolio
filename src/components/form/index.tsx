@@ -3,8 +3,13 @@ import { useState } from "react";
 import { ButtonRounded } from "../buttons";
 import { validateContacto } from "../helpers/validateContacto"
 import { Icontacto, IContactoError } from "./interfaceContacto";
+import { toast } from 'sonner';
+import { useRef } from "react";
+import emailjs from '@emailjs/browser';
+
 
 function Form() {
+    const formRef = useRef<HTMLFormElement>(null);
 
     const [input, setInput] = useState<Icontacto>({
         nombre: "",
@@ -26,8 +31,6 @@ function Form() {
         mensaje: false
     });
 
-    const [loginStatus, setLoginStatus] = useState<string>("");
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
 
         const { name, value } = event.target;
@@ -44,18 +47,58 @@ function Form() {
 
     const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if (isFormInvalid) return;
 
-        const { nombre, email, asunto, mensaje } = input;
+        if (!formRef.current) return;
 
-        if (!nombre || !email || !asunto || !mensaje) {
-            setLoginStatus("Todos los Campos Son Obligatorios para Continuar")
+        try {
+            await emailjs.sendForm(
+                'service_yf7hsuh',
+                'template_7or20cg',
+                formRef.current,
+                'wgZGVEu3gI1xnB0Qu'
+            );
 
-            setTimeout(() => {
-                setLoginStatus("");
-            }, 3000);
-            return
+            toast.success('¡Mensaje enviado con éxito!', {
+                style: {
+                    background: '#f7a35c',
+                    color: '#FFFFFF',
+                    border: '2px solid #f7a35c',
+                    fontFamily: 'var(--font-poppins)',
+                    textAlign: 'center',
+                    minWidth: '200px',
+                },
+            });
+
+            setInput({
+                nombre: "",
+                email: "",
+                asunto: "",
+                mensaje: ""
+            });
+
+            setTouchInput({
+                nombre: false,
+                email: false,
+                asunto: false,
+                mensaje: false
+            });
+
+        } catch (error) {
+            toast.error('Ouch, algo salió mal. 😓 Intentá de nuevo más tarde.', {
+                style: {
+                    background: '#f87171',
+                    color: '#fff',
+                    border: '2px solid #dc2626',
+                    fontFamily: 'var(--font-poppins)',
+                    textAlign: 'center',
+                    minWidth: '200px',
+                },
+            });
+            console.log(error)
         }
-    }
+    };
+
 
     const handleBlur = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name } = event.target
@@ -66,10 +109,12 @@ function Form() {
         })
         setErrors(validateContacto(input));
     }
+    const isFormInvalid = Object.values(errors).some(error => error !== "") || Object.values(input).some(value => value === "");
+
     return (
         <>
             <p className="font-poppins-custom mx-8 text-base md:text-lg leading-relaxed text-justify pb-4">¡Hable más fuerte que tengo una toalla! O mejor complete el formulario</p>
-            <form onSubmit={handleOnSubmit} className="flex flex-col w-full justify-center items-center ">
+            <form ref={formRef} onSubmit={handleOnSubmit} className="flex flex-col w-full justify-center items-center ">
                 <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-4 ">
                     <label className="flex flex-col w-full font-poppins-custom text-base">
                         Nombre
@@ -116,7 +161,11 @@ function Form() {
                             </select>
                             {touchInput.asunto && <p className="ml-2 text-xs text-red-600">{errors.asunto}</p>}
                         </label>
-                        <ButtonRounded text="Enviar" className="mt-4 shadow-[0_0_25px_rgba(255,182,193,0.8)]" />
+                        <ButtonRounded
+                            text="Enviar"
+                            disabled={isFormInvalid}
+                            className={`mt-4 shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
+                        />
                     </div>
                     <label className="flex flex-col w-full font-poppins-custom text-base order-2 md:order-none">
                         Mensaje
@@ -128,7 +177,7 @@ function Form() {
                             onChange={handleInputChange}
                             onBlur={handleBlur}
                         ></textarea>
-                          {touchInput.mensaje && <p className="ml-2 text-xs text-red-600">{errors.mensaje}</p>}
+                        {touchInput.mensaje && <p className="ml-2 text-xs text-red-600">{errors.mensaje}</p>}
                     </label>
                 </div>
 

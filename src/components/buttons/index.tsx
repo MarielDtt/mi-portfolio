@@ -6,6 +6,7 @@ type ButtonProps = {
     id?: string
     href?: string
     download?: boolean
+    disabled?: boolean
 };
 
 export function ButtonRounded({ text, className, onClick, id, href, download }: ButtonProps) {

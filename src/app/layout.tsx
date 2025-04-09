@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Lilita_One, Poppins, Special_Elite } from 'next/font/google';
+import { Toaster } from 'sonner';
 
 const poppins = Poppins({
   weight: ['300', '400', '700'],
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${lilita.variable} ${special.variable} antialiased`}>
 
         {children}
+        <Toaster position="top-center" />
       </body>
     </html>
   );
