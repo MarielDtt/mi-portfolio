@@ -31,6 +31,8 @@ function Form() {
         mensaje: false
     });
 
+    const [loading, setLoading] = useState(false)
+
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
 
         const { name, value } = event.target;
@@ -50,6 +52,7 @@ function Form() {
         if (isFormInvalid) return;
 
         if (!formRef.current) return;
+        setLoading(true)
 
         try {
             await emailjs.sendForm(
@@ -83,6 +86,7 @@ function Form() {
                 asunto: false,
                 mensaje: false
             });
+            setLoading(false)
 
         } catch (error) {
             toast.error('Ouch, algo salió mal. 😓 Intentá de nuevo más tarde.', {
@@ -96,6 +100,7 @@ function Form() {
                 },
             });
             console.log(error)
+            setLoading(false)
         }
     };
 
@@ -163,9 +168,10 @@ function Form() {
                         </label>
                         <ButtonRounded
                             text="Enviar"
-                            disabled={isFormInvalid}
+                            disabled={isFormInvalid || loading}
                             className={`mt-4 shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
-                        />
+                            loading={loading}
+                       />
                     </div>
                     <label className="flex flex-col w-full font-poppins-custom text-base order-2 md:order-none">
                         Mensaje

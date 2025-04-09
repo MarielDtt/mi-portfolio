@@ -65,6 +65,7 @@ function Inicio() {
                         <ButtonRounded
                             href="/Mariel Druetta - CV - Front End.pdf"
                             download text="Descargar CV"
+                            
                         />
                     </div>
                 </div>

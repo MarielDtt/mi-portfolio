@@ -1,3 +1,4 @@
+import { SpinnerColors } from "../spinner";
 
 type ButtonProps = {
     text: string; // Texto que se mostrará en el botón
@@ -7,9 +8,10 @@ type ButtonProps = {
     href?: string
     download?: boolean
     disabled?: boolean
+    loading?: boolean
 };
 
-export function ButtonRounded({ text, className, onClick, id, href, download }: ButtonProps) {
+export function ButtonRounded({ text, className, onClick, id, href, download, loading }: ButtonProps) {
 
     return (
 
@@ -33,7 +35,10 @@ export function ButtonRounded({ text, className, onClick, id, href, download }: 
                     id={id}
 
                 >
-                    {text}
+                    <span className="flex items-center">
+                        {text}
+                        {loading && <SpinnerColors/>}
+                    </span>
                 </button>
             )}
         </div>

@@ -1,5 +1,5 @@
 "use client"
-import { useEffect} from "react";
+import { useEffect, useState } from "react";
 import { SnowParticles } from "../utils/SnowParticles"
 import { ButtonRounded } from "@/components/buttons";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 
 
 export default function Page() {
+    const [loading, setLoading] = useState(false)
+
     const router = useRouter();
     useEffect(() => {
         const cleanup = SnowParticles(); 
@@ -17,7 +19,11 @@ export default function Page() {
     }, []);
 
     const handleClick = () => {
-        router.push("/home");      
+        setLoading(true)
+        setTimeout(() => {
+            router.push("/home");      
+        }, 1500);
+       
       };
 
     return (
@@ -27,7 +33,7 @@ export default function Page() {
                     Todo gran proyecto comienza con una pequeña idea... Explorá mi mundo de código y creatividad
                 </h1>
              
-                    <ButtonRounded className="animate-fade-delay" text="Descubrilo..." id="magic-button" onClick={handleClick} />
+                    <ButtonRounded className="animate-fade-delay" text="Descubrilo" id="magic-button"  loading={loading} onClick={handleClick} />
                 
             </div>
         </main>
