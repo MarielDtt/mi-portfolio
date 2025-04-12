@@ -86,7 +86,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
                     </Typography>
                     {deploy ? (
                         <div className="mt-2">
-                            <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base" />
+                            <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base"   target="_blank"rel= "noopener noreferrer"/>
                         </div>
                     ) : null}
                 </div>
