@@ -1,14 +1,22 @@
+'use client';
 import Contacto from "@/components/contacto";
 import Inicio from "@/components/inicio";
 import Proyectos from "@/components/proyectos";
 import SobreMi from "@/components/sobremi";
 import Tecnologias from "@/components/tecnologias";
+import { motion } from "framer-motion"
+
 
 function Home() {
 
     return (
 
-        <div className="w-[90%] mt-4">
+        <motion.div
+            className="w-[90%] mt-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+        >
             <section className="bg-radial-[at_50%_75%] from-[#D7F4F7] via-[#F8E0D7] to-[#FDE8D7] to-90%
              w-full h-96 rounded-xl mb-16" id="inicio">
                 <Inicio />
@@ -25,12 +33,13 @@ function Home() {
             w-full md:h-96 h-auto mt-4 rounded-xl mb-16" id="sobremi">
                 <SobreMi />
             </section>
-            <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#ECE1F9] to-[#D7F4F7] to-90% w-[full] min-h-[232px] md:min-h-[216px]
- mt-4 rounded-xl mb-16" id="contacto">
+            <section className="bg-radial-[at_50%_75%] from-[#FDE8D7] via-[#ECE1F9] to-[#D7F4F7] to-90% w-[full] min-h-[232px] md:min-h-[216px] mt-4 rounded-xl mb-16" id="contacto">
                 <Contacto />
             </section>
-        </div>
+            <div className=" w-full h-32">
 
+            </div>
+        </motion.div>
     )
 }
 
