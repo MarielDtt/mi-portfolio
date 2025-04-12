@@ -183,7 +183,7 @@ function Form() {
                     <ButtonRounded
                         text="Enviar"
                         disabled={isFormInvalid || loading}
-                        className={`shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
+                        className={` shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
                         loading={loading}
                     />
                 </div>

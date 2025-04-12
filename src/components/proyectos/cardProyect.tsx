@@ -38,7 +38,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
 
     return (
         <Card
-            className="w-full sm:w-1/2 lg:w-1/3 max-w-[22rem] bg-transparent shadow-[0_0_25px_rgba(255,182,193,0.8)]"
+            className="min-w-[18rem] max-w-[20rem] flex-shrink-0 bg-transparent shadow-[0_0_25px_rgba(255,182,193,0.8)]"
             placeholder
             onPointerEnterCapture
             onPointerLeaveCapture
@@ -85,10 +85,10 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
                         {descripcion}
                     </Typography>
                     {deploy ? (
-                    <div className="mt-2">
-                        <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base" />
-                    </div>
-                ) : null}
+                        <div className="mt-2">
+                            <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base" />
+                        </div>
+                    ) : null}
                 </div>
 
                 <div className="w-3/4 mx-auto h-6 bg-gradient-to-t from-[rgba(255,182,193,0.8)] to-transparent pointer-events-none mt-[-1rem]"></div>
@@ -104,7 +104,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
                         className="mx-auto mt-[-1rem] text-black opacity-75 animate-bounce pointer-events-none"
                     />
                 )}
-                   
+
 
                 <div className="group mt-8 inline-flex flex-wrap items-center justify-center w-full gap-3">
                     {tecnologias.map((tech, index) => (
@@ -116,7 +116,7 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
                     ))}
                 </div>
 
-             
+
             </CardBody>
 
         </Card>
