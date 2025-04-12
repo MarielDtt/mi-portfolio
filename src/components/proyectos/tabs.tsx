@@ -23,8 +23,8 @@ export function UnderlineTabs() {
                         "bg-transparent border-b-2 border-[#f7a35c] shadow-none rounded-none",
                 }}
                 placeholder=""
-                onPointerEnterCapture=""
-                onPointerLeaveCapture=""
+                onPointerEnterCapture={""}
+                onPointerLeaveCapture={""}
             >
                 <Tab
                     value="Desde el Aula"
