@@ -58,8 +58,9 @@ function Contacto() {
                 </div>
 
             </div>
-           
-            <div>
+            <div className="w-[80%] h-[1px] rounded-full mx-auto mb-4  bg-[#f7a35c] shadow-[0_0_25px_rgba(255,182,193,0.8)]"></div>
+
+            <div className="pb-4">
                 <Form />
             </div>
 

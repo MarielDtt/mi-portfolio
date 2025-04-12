@@ -119,9 +119,9 @@ function Form() {
     return (
         <>
             <p className="font-poppins-custom mx-8 text-base md:text-lg leading-relaxed text-justify pb-4">¡Hable más fuerte que tengo una toalla! O mejor complete el formulario</p>
-            <form ref={formRef} onSubmit={handleOnSubmit} className="flex flex-col w-full justify-center items-center ">
-                <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-4 ">
-                    <label className="flex flex-col w-full font-poppins-custom text-base">
+            <form ref={formRef} onSubmit={handleOnSubmit} className="flex flex-col w-3/4 justify-center items-center mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-1/2">
+                    <label className="flex flex-col font-poppins-custom text-base w-full">
                         Nombre
                         <input
                             type="text"
@@ -134,7 +134,7 @@ function Form() {
                         {touchInput.nombre && <p className="ml-2 text-xs text-red-600">{errors.nombre}</p>}
                     </label>
 
-                    <label className="flex flex-col w-full font-poppins-custom text-base">
+                    <label className="flex flex-col font-poppins-custom text-base w-full">
                         Correo Electrónico
                         <input
                             type="email"
@@ -146,34 +146,26 @@ function Form() {
                         />
                         {touchInput.email && <p className="ml-2 text-xs text-red-600">{errors.email}</p>}
                     </label>
-                </div>
-                <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-4">
-                    <div className="w-full">
-                        <label className="flex flex-col w-full font-poppins-custom text-base order-1 md:order-none">
-                            Asunto
-                            <select
-                                className=" bg-gradient-to-r from-[#d1f7ff] to-[#ffe3f3] border-2 border-[#f7a35c] rounded-md font-poppins-custom text-base pl-2 w-full"
-                                name="asunto"
-                                value={input.asunto}
-                                onBlur={handleBlur}
-                                onChange={handleInputChange}
-                            >
-                                <option value="">Seleccioná una opción</option>
-                                <option value="contacto">Contacto Laboral</option>
-                                <option value="felicitaciones">Felicitaciones</option>
-                                <option value="consejos">Consejos</option>
-                                <option value="otros">Otros</option>
-                            </select>
-                            {touchInput.asunto && <p className="ml-2 text-xs text-red-600">{errors.asunto}</p>}
-                        </label>
-                        <ButtonRounded
-                            text="Enviar"
-                            disabled={isFormInvalid || loading}
-                            className={`mt-4 shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
-                            loading={loading}
-                       />
-                    </div>
-                    <label className="flex flex-col w-full font-poppins-custom text-base order-2 md:order-none">
+
+                    <label className="flex flex-col font-poppins-custom text-base w-full md:col-span-2">
+                        Asunto
+                        <select
+                            className="bg-gradient-to-r from-[#d1f7ff] to-[#ffe3f3] border-2 border-[#f7a35c] rounded-md font-poppins-custom text-base pl-2 w-full"
+                            name="asunto"
+                            value={input.asunto}
+                            onBlur={handleBlur}
+                            onChange={handleInputChange}
+                        >
+                            <option value="">Seleccioná una opción</option>
+                            <option value="contacto">Contacto Laboral</option>
+                            <option value="felicitaciones">Felicitaciones</option>
+                            <option value="consejos">Consejos</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                        {touchInput.asunto && <p className="ml-2 text-xs text-red-600">{errors.asunto}</p>}
+                    </label>
+
+                    <label className="flex flex-col font-poppins-custom text-base w-full md:col-span-2">
                         Mensaje
                         <textarea
                             rows={4}
@@ -187,6 +179,14 @@ function Form() {
                     </label>
                 </div>
 
+                <div className="mt-4">
+                    <ButtonRounded
+                        text="Enviar"
+                        disabled={isFormInvalid || loading}
+                        className={`shadow-[0_0_25px_rgba(255,182,193,0.8)] ${isFormInvalid ? "opacity-50 cursor-not-allowed" : ""}`}
+                        loading={loading}
+                    />
+                </div>
             </form>
         </>
 

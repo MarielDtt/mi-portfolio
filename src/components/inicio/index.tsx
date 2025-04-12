@@ -1,6 +1,7 @@
 "use client"
 import { useState, useEffect } from "react";
 import { ButtonRounded } from "../buttons";
+import Brain from "../brain";
 
 
 
@@ -10,7 +11,6 @@ function Inicio() {
     const [posicionFraseActual, setPosicionFraseActual] = useState(0);
     const [characterByCharacter, setCharacterByCharacter] = useState("")
     const [borrando, setBorrando] = useState(false);
-
 
     useEffect(() => {
         const frase = textoAnimado[posicionFraseActual];
@@ -65,7 +65,6 @@ function Inicio() {
                         <ButtonRounded
                             href="/Mariel Druetta - CV - Front End.pdf"
                             download text="Descargar CV"
-                            
                         />
                     </div>
                 </div>
@@ -83,7 +82,7 @@ function Inicio() {
                     <ButtonRounded href="/Mariel Druetta - CV - Front End.pdf" download text="Descargar CV" />
                 </div>
 
-
+            
             </div>
         </>
     )
