@@ -1,9 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
 import { ButtonRounded } from "../buttons";
-import Brain from "../brain";
-
-
 
 const textoAnimado = ["Desarrollador FullStack", "Desarrollador Frontend", "Desarrollador Web"]
 function Inicio() {
