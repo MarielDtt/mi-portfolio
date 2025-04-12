@@ -17,7 +17,6 @@ function FloatingSidebar() {
                 </div>
             </Link>
 
-            {/* Playlist */}
             <a href="https://youtube.com/playlist?list=PLTQB9sNwVGZ_w-og1OMhgNrD3egeZYApC&si=MkK0nB11rRFYZcLq" target="_blank" rel="noopener noreferrer">
                 <div className="group relative">
                     <div className="bg-white/30 rounded-full p-2 backdrop-blur-sm shadow-[0_0_25px_rgba(255,182,193,0.8)] hover:scale-150 transition-transform duration-300 ease-in-out">
@@ -29,7 +28,6 @@ function FloatingSidebar() {
                 </div>
             </a>
 
-            {/* WhatsApp */}
             <a href="https://api.whatsapp.com/send?phone=5491166603916" target="_blank" rel="noopener noreferrer">
                 <div className="group relative">
                     <div className="bg-white/30 rounded-full p-2 backdrop-blur-sm shadow-[0_0_25px_rgba(255,182,193,0.8)] hover:scale-150 transition-transform duration-300 ease-in-out">
