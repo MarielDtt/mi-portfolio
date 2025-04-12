@@ -179,7 +179,7 @@ function Form() {
                     </label>
                 </div>
 
-                <div className="mt-4">
+                <div className="my-4">
                     <ButtonRounded
                         text="Enviar"
                         disabled={isFormInvalid || loading}

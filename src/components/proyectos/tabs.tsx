@@ -44,8 +44,8 @@ export function UnderlineTabs() {
                 onPointerEnterCapture=""
                 onPointerLeaveCapture=""
             >
-                <TabPanel value="Desde el Aula" className="ml-8 mt-4">
-                    <div className="flex overflow-x-auto md:overflow-x-visible md:flex-row flex-nowrap gap-8 px-4 snap-x snap-mandatory justify-center">
+                <TabPanel value="Desde el Aula" className="scroll-pl-4 mt-4">
+                    <div className="flex overflow-x-auto md:overflow-x-visible md:flex-row flex-nowrap gap-8 pl-4 pr-4 snap-x snap-mandatory justify-start md:justify-center">
                         {proyectosData.map((proyecto, index) => (
                             <CardProyect
                                 key={index}
