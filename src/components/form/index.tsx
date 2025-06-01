@@ -55,10 +55,10 @@ function Form() {
         setLoading(true)
 
         try {
-            await emailjs.sendForm(
+            await emailjs.send(
                 'service_yf7hsuh',
                 'template_7or20cg',
-                formRef.current,
+                 input as unknown as Record<string, unknown>,
                 'wgZGVEu3gI1xnB0Qu'
             );
 
