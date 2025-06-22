@@ -12,7 +12,7 @@ export const proyectosData = [
             { src: "/react.png", alt: "React", tooltip: "React" },
             { src: "/vite.png", alt: "Vite", tooltip: "Vite" },
         ],
-        deploy:""        
+        deploy: ""
     },
     {
         titulo: "ByteBox",
@@ -26,7 +26,7 @@ export const proyectosData = [
             { src: "/lucide.png", alt: "lucide", tooltip: "Lucide" },
             { src: "/sonner.png", alt: "sonner", tooltip: "Sonner" },
         ],
-        deploy:""
+        deploy: ""
     },
     {
         titulo: "MobileCer",
@@ -43,6 +43,23 @@ export const proyectosData = [
         deploy: "https://pffront-fawn.vercel.app/"
 
     },
+]
 
+
+export const proyectosRealesData = [
+    {
+        titulo: "Seguros Camporino",
+        descripcion: "Landing page institucional creada para una empresa productora de seguros . El proyecto incluye una interfaz responsive, secciones informativas, formulario de contacto y estética personalizada según los valores de la marca. Fue desarrollado a medida en colaboración con el cliente, priorizando la claridad y la experiencia del usuario.",
+        imagenes: imagenesProyectos.segurosCamporino,
+        tecnologias: [
+            { src: "/ts.png", alt: "TypeScript", tooltip: "TypeScript" },
+            { src: "/next.png", alt: "next", tooltip: "Next" },
+            { src: "/lucide.png", alt: "lucide", tooltip: "Lucide" },
+            { src: "/motion.png", alt: "framer-motion", tooltip: "Motion" },
+            { src: "/vercel.png", alt: "vercel", tooltip: "Vercel" },
+        ],
+        deploy: "https://www.seguroscamporino.com.ar",
+        figma: "https://www.figma.com/design/YqE0PW8brpavCjUwOvXmRB/Seguros-Camporino?node-id=77-36&t=x2Sgp0VU6GVoRQo5-1"
+    },
 
 ]

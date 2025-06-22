@@ -22,9 +22,10 @@ type CardProps = {
     }[];
     imagenes: string[];
     deploy?: string;
+    figma?: string
 };
 
-function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: CardProps) {
+function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy, figma }: CardProps) {
     const [estaEnElFinal, setEstaEnElFinal] = useState(false);
 
     const handleScrollDescripcion = (event: React.UIEvent<HTMLDivElement>) => {
@@ -87,6 +88,11 @@ function CardProyect({ titulo, descripcion, tecnologias, imagenes, deploy }: Car
                     {deploy ? (
                         <div className="mt-2">
                             <ButtonRounded text="Ver Proyecto" href={deploy} className="w-28 h-10 text-base"   target="_blank"rel= "noopener noreferrer"/>
+                        </div>
+                    ) : null}
+                     {figma ? (
+                        <div className="mt-2">
+                            <ButtonRounded text="Ver Figma" href={figma} className="w-28 h-10 text-base"   target="_blank"rel= "noopener noreferrer"/>
                         </div>
                     ) : null}
                 </div>

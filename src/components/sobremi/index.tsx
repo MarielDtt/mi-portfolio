@@ -47,7 +47,7 @@ function SobreMi() {
             >
 
                 <div
-                    className={`relative group rounded-full w-4/5 h-64 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 ${imagenGirando ? "animate-flip" : ""
+                    className={`relative group rounded-full w-132 h-48 hidden md:block shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 ${imagenGirando ? "animate-flip" : ""
                         }`}
                     onClick={handleGiroImagenClick}>
 
@@ -85,7 +85,7 @@ function SobreMi() {
 
                 </div>
                 <div
-                    className={`rounded-full w-1/3 h-36 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative ${imagenGirando ? "animate-flip" : ""
+                    className={`rounded-full w-40 h-40 md:hidden mx-auto shadow-[0_0_15px_rgba(255,182,193,0.4)] hover:shadow-[0_0_25px_rgba(255,182,193,0.8)] transition-shadow duration-300 relative ${imagenGirando ? "animate-flip" : ""
                         }`}
                     onClick={handleGiroImagenClick}
                     onTouchStart={handleGiroImagenClick}>

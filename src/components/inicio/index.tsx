@@ -43,22 +43,22 @@ function Inicio() {
     return (
         <>
             <div className="flex">
-                <div className="hidden md:flex w-full h-96 flex-col pt-24 pl-8">
+                <div className="hidden md:flex w-2/4 h-96 flex-col pt-24 pl-8">
 
-                    <h1 className="font-lilita-custom md:text-6xl text-4xl">
+                    <h1 className="font-lilita-custom md:text-6xl text-4xl text-center">
                         MARIEL DRUETTA
                     </h1>
-                    <div className="pt-8 ">
+                    <div className="m-auto">
                         <h2
                             key={characterByCharacter}
-                            className="text-[#f7a35c] text-2xl text-center w-2/5 special-elite-text"
+                            className="text-[#f7a35c] text-2xl text-center  special-elite-text"
                         >
                             {characterByCharacter}
                             <span className="ml-1 animate-pulse">|</span>
                         </h2>
 
                     </div>
-                    <div className="w-2/5 pt-8 flex justify-center">
+                    <div className="w-2/5  justify-center m-auto">
                         <ButtonRounded
                             href="/Mariel Druetta - CV - Front End.pdf"
                             download text="Descargar CV"
